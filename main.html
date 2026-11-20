@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Aguafina+Script&family=Della+Respira&family=Inder&family=Katibeh&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+CZ:wght@100..400&family=Playwrite+US+Trad+Guides&display=swap" rel="stylesheet">
+    <link rel="icon" href="фавикон.png" type="image/x-icon">
+    <title>Гармония Внутри</title>
+</head>
+<body>
+    <header>
+        <div class="links">
+          <ul>
+               <li><a href="main.html">Главная</a></li>
+               <li><a href="practice.html">Практика</a></li>
+            </ul>
+        </div>
+        <div class="name">
+            <h1>Гармония Внутри</h1>
+        <img src="Картина_в_шапке.png" alt="Девушка в позе лотоса" loading="lazy">
+        </div>
+    </header>
+    <div class="description">
+        <h2>Гармония внутри - это сайт для определения<br> внутреннего состояния и дальнейшего<br> улучшения ментального здоровья</h2>
+    </div>
+    <div class="generate">
+        <p>Для поднятия настроения:</p>
+        <div class="phrase">У вас всё получится.</div>
+        <button class="genphrase">Сгенерировать</button>
+    </div>
+    <div class="privilege">
+        <h2>Данный сайт поможет вам:</h2>
+        <div class="advantage">Определить ваше ментальное состояние на данный момент.</div>
+        <div class="advantage">Улучшить ваше состояние при помощи практик и медитаций.</div>
+        <div class="advantage">Узнать много интересной информации о ментальном здоровье.</div>
+        <p>Одним из главных способов улучшения ментального состояния<br>
+         считается медитация ведь это ряд психических упражнений,<br>
+         используемых в составе духовно-религиозной или<br>
+         оздоровительной практик, или особое психическое состояние,<br>
+         возникающее в результате этих упражнений. Поэтому мы<br>
+         сделали упор на данный метод.</p>
+    </div>
+    <div class="test">
+        <p>Для начала предлагаем вам пройти тест<br>
+         для определения ментального состояния</p>
+        <input class="user" type="name" placeholder="Введите имя">
+        <button class="testbtn">Пройти тест</button>
+    </div>
+    <div class="footer">
+        <p>Гармония_внутри@yandex.ru</p>
+    </div>
+    <button id="TopBtn">↑</button>
+    <div id="testModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close-modal">Х</span>
+                <h3>Тест на ментальное состояние</h3>
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <div class="progress-text" id="progressText">Вопрос 1 из 5</div>
+                </div>
+            </div>
+            <div class="modal-body" id="modalBody">
+            </div>
+            <div class="modal-footer" id="modalFooter">
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
