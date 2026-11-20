@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="st.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inder&display=swap" rel="stylesheet">
+    <link rel="icon" href="фавикон.png" type="image/x-icon">
+    <title>Гармония Внутри</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="links">
+            <img src="Картина_в_шапке.png" alt="Лотос" loading="lazy">
+            <ul>
+                <li><a href="main.html">Главная</a></li>
+                <li><a href="practice.html">Практика</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="article-content">
+            <h1>Сакральная геометрия</h1>
+            
+            <p>Сакральная геометрия — это древнее знание о математических закономерностях, лежащих в основе мироздания. Её изучали в школах мистерий Древнего Египта, Греции и Индии, а сегодня она переживает новое рождение в контексте духовных практик и медитации.</p>
+            
+            <h2>Что такое сакральная геометрия</h2>
+            <p>Сакральная геометрия изучает формы, пропорции и пространственные отношения, которые считаются священными. Это язык, на котором говорит Вселенная. От спирали галактики до структуры цветка — везде можно найти повторяющиеся геометрические паттерны.</p>
+            
+            <h2>Платоновы тела</h2>
+            <p>Особое место в сакральной геометрии занимают пять Платоновых тел — правильные многогранники, которые древние философы связывали с пятью стихиями:</p>
+            <ul>
+                <li><strong>Тетраэдр</strong> (огонь) — самая простая форма, символ трансформации</li>
+                <li><strong>Гексаэдр/Куб</strong> (земля) — символ стабильности и материального мира</li>
+                <li><strong>Октаэдр</strong> (воздух) — связь между духовным и материальным</li>
+                <li><strong>Додекаэдр</strong> (эфир) — самая сложная форма, символ космоса</li>
+                <li><strong>Икосаэдр</strong> (вода) — символ текучести и эмоций</li>
+            </ul>
+            
+            <h2>Медитация с геометрическими формами</h2>
+            <p>Созерцание геометрических форм — мощная медитативная практика. Когда вы смотрите на идеальные пропорции Платоновых тел или цветка жизни, ваш ум естественным образом успокаивается и входит в состояние глубокого созерцания.</p>
+            
+            <blockquote>
+                Форма — это застывший свет. Застывший свет — это материя. Материя — это свет, который мы можем видеть и трогать.
+            </blockquote>
+            
+            <h2>Как использовать 3D-модель</h2>
+            <p>Ниже вы видите интерактивную 3D-модель икосаэдра — одного из Платоновых тел, связанного со стихией воды и эмоциональной гармонией.</p>
+            
+            <h3>Управление моделью:</h3>
+            <ul>
+                <li>Зажмите клавишу <strong>Ctrl</strong> — появится возможность взаимодействовать с моделью</li>
+                <li>Зажав левую кнопку мыши, вращайте модель в любом направлении</li>
+                <li>Используйте колесико мыши, чтобы приблизить или отдалить модель</li>
+                <li>Отпустите Ctrl — модель продолжит вращаться сама по себе</li>
+            </ul>
+            
+            <p>Эта практика созерцания помогает развивать пространственное мышление, успокаивает ум и открывает доступ к глубинным слоям сознания. Попробуйте посвятить созерцанию модели 5-10 минут в день.</p>
+            
+            <a href="practice.html" class="back-link">Вернуться к практикам</a>
+        </div>
+    </main>
+
+    <div class="footer">
+        <p>Гармония_внутри@yandex.ru</p>
+    </div>
+
+    <button id="TopBtn">↑</button>
+
+    <script src="st.js"></script>
+    
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.128.0/build/three.module.js"
+            }
+        }
+    </script>
+
+    <script type="module">
+    import * as THREE from 'three';
+    
+    const container = document.createElement('div');
+    container.id = 'canvas-container';
+    document.body.insertBefore(container, document.body.firstChild);
+    
+    const scene = new THREE.Scene();
+    scene.background = null;
+    
+    const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+    camera.position.set(0, 2, 8);
+    camera.lookAt(0, 0, 0);
+    
+    
+    const renderer = new THREE.WebGLRenderer({ alpha: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(window.devicePixelRatio);
+    container.appendChild(renderer.domElement);
+   
+    const geometry = new THREE.IcosahedronGeometry(1.5, 0);
+    
+    const material = new THREE.MeshStandardMaterial({
+        color: 0x80b295,
+        emissive: 0x50a573,
+        emissiveIntensity: 0.8,
+        shininess: 90,
+        metalness: 0.7,
+        roughness: 0.3,
+        transparent: true,
+        opacity: 0.9
+    });
+    
+    const icosahedron = new THREE.Mesh(geometry, material);
+    scene.add(icosahedron);
+   
+    const wireframeMaterial = new THREE.MeshBasicMaterial({
+        color: 0xE6F4EE,
+        wireframe: true,
+        transparent: true,
+        opacity: 0.7
+    });
+    const wireframe = new THREE.Mesh(geometry, wireframeMaterial);
+    scene.add(wireframe);
+    
+    const particleCount = 600;
+    const particleGeometry = new THREE.BufferGeometry();
+    const particlePositions = new Float32Array(particleCount * 3);
+    const particleColors = new Float32Array(particleCount * 3);
+    
+    for (let i = 0; i < particleCount; i++) {
+        const radius = 2.3 + Math.random() * 1.2;
+        const theta = Math.random() * Math.PI * 2;
+        const phi = Math.acos(2 * Math.random() - 1);
+        
+        particlePositions[i * 3] = radius * Math.sin(phi) * Math.cos(theta);
+        particlePositions[i * 3 + 1] = radius * Math.sin(phi) * Math.sin(theta);
+        particlePositions[i * 3 + 2] = radius * Math.cos(phi);
+        
+        const colorChoice = Math.random();
+        if (colorChoice < 0.33) {
+            particleColors[i * 3] = 0.5;     
+            particleColors[i * 3 + 1] = 0.8;
+            particleColors[i * 3 + 2] = 0.6; 
+        } else if (colorChoice < 0.66) {
+            particleColors[i * 3] = 0.9;     
+            particleColors[i * 3 + 1] = 0.8;
+            particleColors[i * 3 + 2] = 0.5;
+        } else {
+            particleColors[i * 3] = 0.8;     
+            particleColors[i * 3 + 1] = 0.6;
+            particleColors[i * 3 + 2] = 0.8;
+        }
+    }
+    
+    particleGeometry.setAttribute('position', new THREE.BufferAttribute(particlePositions, 3));
+    particleGeometry.setAttribute('color', new THREE.BufferAttribute(particleColors, 3));
+    
+    const particleMaterial = new THREE.PointsMaterial({
+        size: 0.05,
+        vertexColors: true,
+        transparent: true,
+        opacity: 0.9,
+        blending: THREE.AdditiveBlending
+    });
+    
+    const particles = new THREE.Points(particleGeometry, particleMaterial);
+    scene.add(particles);
+    
+    const glowGeometry = new THREE.IcosahedronGeometry(1.8, 0);
+    const glowMaterial = new THREE.MeshBasicMaterial({
+        color: 0x80b295,
+        transparent: true,
+        opacity: 0.15,
+        side: THREE.BackSide
+    });
+    const glow = new THREE.Mesh(glowGeometry, glowMaterial);
+    scene.add(glow);
+    
+    const ringGeometry = new THREE.TorusGeometry(2.2, 0.03, 64, 200);
+    const ringMaterial = new THREE.MeshStandardMaterial({
+        color: 0x80b295,
+        emissive: 0x50a573,
+        emissiveIntensity: 0.6,
+        metalness: 0.8
+    });
+    
+    const ring1 = new THREE.Mesh(ringGeometry, ringMaterial);
+    const ring2 = new THREE.Mesh(ringGeometry, ringMaterial);
+    const ring3 = new THREE.Mesh(ringGeometry, ringMaterial);
+    
+    ring1.rotation.x = Math.PI / 2;
+    ring2.rotation.z = Math.PI / 2;
+    ring3.rotation.x = Math.PI / 4;
+    ring3.rotation.z = Math.PI / 4;
+    
+    scene.add(ring1);
+    scene.add(ring2);
+    scene.add(ring3);
+    
+    const ambientLight = new THREE.AmbientLight(0x404060, 0.6);
+    scene.add(ambientLight);
+    
+    const mainLight = new THREE.DirectionalLight(0xffffff, 1.2);
+    mainLight.position.set(5, 10, 7);
+    scene.add(mainLight);
+    
+    const fillLight = new THREE.PointLight(0x80b295, 0.8);
+    fillLight.position.set(0, -2, 2);
+    scene.add(fillLight);
+    
+    const backLight = new THREE.PointLight(0xE6F4EE, 0.7);
+    backLight.position.set(0, 1, -5);
+    scene.add(backLight);
+    
+    const topLight = new THREE.PointLight(0xffffff, 0.5);
+    topLight.position.set(0, 5, 0);
+    scene.add(topLight);
+    
+    const colorLight = new THREE.PointLight(0x80b295, 0.6);
+    colorLight.position.set(3, 2, 2);
+    scene.add(colorLight);
+    
+    let isCtrlPressed = false;
+    let isDragging = false;
+    let lastMouseX = 0;
+    let lastMouseY = 0;
+    let rotationX = 0;
+    let rotationY = 0;
+    
+    let autoRotateSpeed = 0.003;
+    
+    window.addEventListener('keydown', (e) => {
+        if (e.key === 'Control' || e.key === 'Meta') {
+            isCtrlPressed = true;
+            container.classList.add('active');
+            const hint = document.getElementById('ctrlHint');
+            if (hint) hint.classList.add('active');
+            document.body.style.cursor = 'grab';
+        }
+    });
+    
+    window.addEventListener('keyup', (e) => {
+        if (e.key === 'Control' || e.key === 'Meta') {
+            isCtrlPressed = false;
+            container.classList.remove('active');
+            const hint = document.getElementById('ctrlHint');
+            if (hint) hint.classList.remove('active');
+            document.body.style.cursor = 'default';
+            isDragging = false;
+        }
+    });
+    
+    container.addEventListener('mousedown', (e) => {
+        if (isCtrlPressed) {
+            isDragging = true;
+            lastMouseX = e.clientX;
+            lastMouseY = e.clientY;
+            document.body.style.cursor = 'grabbing';
+            e.preventDefault();
+        }
+    });
+    
+    window.addEventListener('mousemove', (e) => {
+        if (isDragging && isCtrlPressed) {
+            const deltaX = e.clientX - lastMouseX;
+            const deltaY = e.clientY - lastMouseY;
+            
+            rotationY += deltaX * 0.008;
+            rotationX += deltaY * 0.008;
+            
+            rotationX = Math.max(-Math.PI / 2, Math.min(Math.PI / 2, rotationX));
+            
+            lastMouseX = e.clientX;
+            lastMouseY = e.clientY;
+            
+            autoRotateSpeed = 0;
+            setTimeout(() => {
+                if (!isDragging) autoRotateSpeed = 0.003;
+            }, 1000);
+        }
+    });
+    
+    window.addEventListener('mouseup', () => {
+        if (isDragging) {
+            isDragging = false;
+            document.body.style.cursor = 'grab';
+        }
+    });
+    
+    let time = 0;
+    
+    function animate() {
+        requestAnimationFrame(animate);
+        time += 0.01;
+        
+        if (!isDragging) {
+            rotationY += autoRotateSpeed;
+        }
+        
+        icosahedron.rotation.x = rotationX;
+        icosahedron.rotation.y = rotationY;
+        wireframe.rotation.x = rotationX;
+        wireframe.rotation.y = rotationY;
+        wireframe.rotation.z = Math.sin(time * 0.5) * 0.1;
+        
+        glow.rotation.x = rotationX * 0.9;
+        glow.rotation.y = rotationY * 0.9;
+        
+        particles.rotation.x = rotationX * 0.7;
+        particles.rotation.y = rotationY * 0.7;
+        particles.rotation.z = time * 0.15;
+        
+        ring1.rotation.z = time * 0.3;
+        ring2.rotation.x = time * 0.2;
+        ring3.rotation.y = time * 0.25;
+        
+        const scale = 1 + Math.sin(time * 2.5) * 0.03;
+        icosahedron.scale.set(scale, scale, scale);
+        wireframe.scale.set(scale, scale, scale);
+       
+        const glowScale = 1 + Math.sin(time * 2) * 0.05;
+        glow.scale.set(glowScale, glowScale, glowScale);
+       
+        const opacity = 0.85 + Math.sin(time * 2) * 0.1;
+        material.opacity = opacity;
+        
+        const brightness = 0.6 + Math.sin(time * 1.5) * 0.3;
+        material.emissiveIntensity = brightness;
+        
+        ringMaterial.emissiveIntensity = 0.5 + Math.sin(time * 2) * 0.3;
+        
+        colorLight.position.x = 3 + Math.sin(time * 1.2) * 1.5;
+        colorLight.position.z = 2 + Math.cos(time * 1.2) * 1.5;
+        
+        renderer.render(scene, camera);
+    }
+    
+    animate();
+    
+    window.addEventListener('resize', onWindowResize, false);
+    
+    function onWindowResize() {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+    }
+</script>
+</body>
+</html>
