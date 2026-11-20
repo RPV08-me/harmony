@@ -1,0 +1,206 @@
+body {
+    font-family: "Inder", sans-serif;
+    position: relative;
+}
+
+header {
+    background-color: #E6F4EE;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.links {
+    position: fixed;
+    background-color: #E6F4EE;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.links ul {
+    list-style-type: none;
+    margin-right: 50px;
+    padding-top: 10px;
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+}
+
+.links li {
+    display: inline;
+}
+
+.links a {
+    color: #80B295;
+    text-decoration: none;
+    font-size: 32px;
+}
+
+img {
+    width: 60px;
+    justify-content: flex-start;
+    padding: 10px 10px 10px 10px;
+}
+
+.main-content {
+    padding-top: 120px;  
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.bloc {
+    margin-bottom: 50px;
+}
+
+.bloc h2 {
+    padding-left: 30px;
+    font-size: 64px;
+    color: #25422C;
+    margin-bottom: 20px;
+}
+
+.bloc ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.bloc li {
+    padding-left: 60px;
+}
+
+.bloc a {
+    padding-left: 60px;
+    font-size: 36px;
+    color: #25422C;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.footer {
+    text-align: center;
+    color: #fff; 
+    font-size: 36px;
+    background-color:#80B295;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 50px;
+}
+
+.links, .bloc a, .footer {
+    cursor: url('Лилия1.png'), pointer;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.circle-1,
+.circle-2,
+.circle-3,
+.circle-4,
+.circle-5,
+.circle-6,
+.circle-7,
+.circle-8,
+.circle-9,
+.circle-10,
+.circle-11,
+.circle-12,
+.circle-13 {
+    position: fixed;
+    border-radius: 50%;
+    background-color: #80B295;
+    opacity: 0.4;
+    transition: transform 0.3s ease;
+    z-index: 100;
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+.circle-1:hover,
+.circle-2:hover,
+.circle-3:hover,
+.circle-4:hover,
+.circle-5:hover,
+.circle-6:hover,
+.circle-7:hover,
+.circle-8:hover,
+.circle-9:hover,
+.circle-10:hover,
+.circle-11:hover,
+.circle-12:hover,
+.circle-13:hover {
+    transform: scale(1,5);
+    opacity: 0.5;
+}
+
+.circle-1 { width: 80px; height: 80px; left: 5%; top: 15%; }
+.circle-2 { width: 120px; height: 120px; left: 85%; top: 25%; }
+.circle-3 { width: 60px; height: 60px; left: 15%; top: 45%; }
+.circle-4 { width: 150px; height: 150px; left: 75%; top: 55%; }
+.circle-5 { width: 90px; height: 90px; left: 10%; top: 70%; }
+.circle-6 { width: 70px; height: 70px; left: 90%; top: 80%; }
+.circle-7 { width: 130px; height: 130px; left: 45%; top: 10%; }
+.circle-8 { width: 100px; height: 100px; left: 55%; top: 35%; }
+.circle-9 { width: 55px; height: 55px; left: 25%; top: 85%; }
+.circle-10 { width: 110px; height: 110px; left: 70%; top: 15%; }
+.circle-11 { width: 65px; height: 65px; left: 35%; top: 60%; }
+.circle-12 { width: 140px; height: 140px; left: 60%; top: 75%; }
+.circle-13 { width: 85px; height: 85px; left: 50%; top: 50%; }
+
+@media (min-width: 1920px) {
+    .main-content {
+        max-width: 1400px;
+    }
+    
+    .bloc h2 {
+        font-size: 80px;
+    }
+    
+    .bloc a {
+        font-size: 44px;
+    }
+    
+    .footer {
+        font-size: 44px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .main-content {
+        max-width: 960px;
+    }
+    
+    .bloc h2 {
+        font-size: 54px;
+        padding-left: 25px;
+    }
+    
+    .bloc a {
+        font-size: 30px;
+        padding-left: 50px;
+    }
+    
+    .bloc li {
+        padding-left: 50px;
+    }
+}
